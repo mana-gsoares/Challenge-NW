@@ -1,0 +1,32 @@
+# File  : docker-compose.yml
+# Author: Matthieu Petiteau <mpetiteau.pro@gmail.com>
+# Date  : 04.12.2019
+
+version: "3"
+
+services:
+    nginx:
+        build:
+            context: ./nginx
+            dockerfile: Dockerfile
+            args:
+                DOMAIN: ${NGX_DOMAIN}
+                FLASK: ${FLASK_APP_NAME}
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - /etc/letsencrypt:/etc/letsencrypt
+        links:
+            - flask_app:flask_app
+
+    flask_app:
+        build:
+            context: ./core
+            dockerfile: Dockerfile
+        expose:
+            - "5000"
+        volumes:
+            - .:/usr/src/app
+        environment:
+            - FLASK_ENV=${FLASK_ENV}
