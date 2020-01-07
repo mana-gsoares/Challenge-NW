@@ -57,4 +57,4 @@ Outros comandos
 
 sudo make dc-reboot    # Reinicia o aplicativo. 
 sudo make dc-stop      # Para o aplicativo. 
-sudo make dc-cleanup   # Exclui e limpa as imagens do docker.
+sudo make dc-cleanup   # Exclui e limpar as imagens do docker.
