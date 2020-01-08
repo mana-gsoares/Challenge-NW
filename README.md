@@ -1,60 +1,71 @@
-# Challenge-NW
+#**CHALLENGE-NW **:fa-trophy:
 
 
-Desafio ITOPS
+## Desafio ITOPS :fa-cogs:
 
 
-Esse desafio tem como objetivo entender o seu conhecimento sobre o mundo de microserviços e containers.
-Nós queremos construir uma API Hello World, efetuar o deploy em um container mínimo e expo-lo com um proxy reverso a frente (nginx) com suporte a TLS 1.2 utilizando certificado do letsencrypt.
-São 4 desafios principais:
+Esse desafio tem como objetivo entender o seu conhecimento sobre o mundo de microserviços e containers. Nós queremos construir uma API Hello World, efetuar o deploy em um container mínimo e expo-lo com um proxy reverso a frente (nginx) com suporte a TLS 1.2 utilizando certificado do letsencrypt. São 4 desafios principais:
 
 - Construir uma API extremamente basica retornando um Hello World em algum método HTTP (GET, POST, PUT...)
 - Escrever um Dockerfile
-- Automatizar o build do container
 - Configurar TLS a frente do serviço
+- Automatizar o build do container
 
 ------------------------------------------------------------------------------
+### Descrição
 
-Realizei uma automação de todo processo, sendo adequado o desafio baseado em scripts e estudos na internet
+Fala Time, irei descrever aqui as etapas deste **desafio**, ***MUITO*** desafiador (kkk)
 
-Imagens do Docker
+Segui a ordem que esta descrita acima na introdução sendo que a ultima parte não consegui infelizmente não consegui realizar =/
 
-App | alpine-3.8
-Nginx | latest
+Todo projeto foi baseado em estudo e pesquisa na internet, junto com meu conhecimento
 
-Requerimentos 
+#### **Desenvolvimento da API (Python)** :fa-github-square:
 
-docker | docker-compose	| make
+A API desenvolvida mostra uma pagina HTML com um texto e uma imagem .gif, sendo que se acessar qualquer outro subdominio no site é mostrado uma pagina de erro e um indicativo para voltar a home, também foi criar um script do Gunicorn para realizar o balanceamento de carga.
 
-Definição dos detalhes do aplicativo
+#### **Criação do Dockerfile**  :fa-pencil-square-o:
 
-No ".env" é necessário inserir os detalhes do seu app.
+Os Dockerfile's foram criados contendo apenas o conteudo essencial para funcionamento da API e sua segurança tendo abaixo sua especificações
 
-# .env 
-SSL_EMAIL=seuemail@example.com   # endereço de email do certificado 
-Letsencrypt NGX_DOMAIN = myexample.com   # domínio da web para configuração do Nginx e Letsencrypt 
-FLASK_ENV = development           # desenvolvimento / ambiente de produção do aplicativo python
+|   Serviço| Imagem   | Versão   |
+| ------------ | ------------ | ------------ |
+| Flask e Gunicorn  | alpine  |  3.7 |
+|  Nginx  |  nginx | mais recente |
+
+####**Configuração do TLS**
+
+Confesso essa foi a parte mais complexa para mim, por mais que existam diversos tutoriais na internet, realizar a integração dentro do Docker me custou muito para compreender, até que consegui um script que automatiza :fa-heart: todo o processo, fiz um code review validando toda a estrutura e ficou uma belezinha. =P
+
+##### :fa-power-off: Como usar 
 
 
-SSL
+###### 2) Define applications details
 
-Precisamos instalar o cliente Let's encrypt para obter os certificados SSL.
+O `.env` precisa ser editado para inserir as informações do certificado
+```sh
+# .env
+SSL_EMAIL=meuemail@example.com  # email para o certificado Letsencrypt 
+NGX_DOMAIN=meusite.com  # Endereço para o Nginx setar junto com o Letsencrypt
+FLASK_ENV=development          # Setar qual ambiente será usado produção ou dev
+```
 
+#### 3) SSL
+Comandos para realizar a validação do Letsencrypt client gerando o certificado SSL
+```sh
 sudo make install-le-client
+```
+instala o cliente Letsencrypt e obtém um certificado para o domínio da web especificado.
 
-Ele instala o cliente Letsencrypt e obtém um certificado para o domínio da web especificado.
-
-Nota: O certificado da Letsencrypt gratuito fica disponível apenas por 90 dias. Depois é necessário renovar
-
+_Obs: O Letsencrypt é validado apenas por 90 dias, sendo necessário renovar com o comando abaixo:_   
+```sh
 sudo make renew-le-cert
+```
 
-INICIAR
+## ✅ Tudo Okay, Let's Go
 
+**Iniciar aplicação**
+```sh
 sudo make dc-start
-
-
-Outros comandos
-
-sudo make dc-reboot    # Reinicia o aplicativo. 
-sudo make dc-stop      # Para o aplicativo. 
-sudo make dc-cleanup   # Exclui e limpar as imagens do docker.
+```
+A ultima etapa de automatizar (Ansible + Github Webhooks) não consegui realizar.  :fa-frown-o: :fa-frown-o:
