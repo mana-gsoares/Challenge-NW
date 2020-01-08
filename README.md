@@ -55,7 +55,7 @@ Comandos para realizar a validação do Letsencrypt client gerando o certificado
 ```sh
 sudo make install-le-client
 ```
-instala o cliente Letsencrypt e obtém um certificado para o domínio da web especificado.
+Instala o cliente Letsencrypt e obtém um certificado para o domínio da web especificado.
 
 _Obs: O Letsencrypt é validado apenas por 90 dias, sendo necessário renovar com o comando abaixo:_   
 ```sh
