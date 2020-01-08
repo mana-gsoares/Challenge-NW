@@ -1,4 +1,4 @@
-#**CHALLENGE-NW **:fa-trophy:
+# **CHALLENGE-NW **:fa-trophy:
 
 
 ## Desafio ITOPS :fa-cogs:
