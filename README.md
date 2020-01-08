@@ -18,9 +18,9 @@ Fala Time, irei descrever aqui as etapas deste **desafio**, ***MUITO*** desafiad
 
 Segui a ordem que esta descrita acima na introdução sendo que a ultima parte não consegui infelizmente não consegui realizar =/
 
-Todo projeto foi baseado em estudo e pesquisa na internet, junto com meu conhecimento
+Todo projeto foi baseado em estudo e pesquisa na internet, junto do meu conhecimento.
 
-#### **Desenvolvimento da API (Python)** :fa-github-square:
+#### Desenvolvimento da API (Python) :snake:
 
 A API desenvolvida mostra uma pagina HTML com um texto e uma imagem .gif, sendo que se acessar qualquer outro subdominio no site é mostrado uma pagina de erro e um indicativo para voltar a home, também foi criar um script do Gunicorn para realizar o balanceamento de carga.
 
