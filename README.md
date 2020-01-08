@@ -1,7 +1,7 @@
-# **CHALLENGE-NW **:fa-trophy:
+# CHALLENGE-NW :trophy:
 
 
-## Desafio ITOPS :fa-cogs:
+## Desafio ITOPS :arrows_clockwise:
 
 
 Esse desafio tem como objetivo entender o seu conhecimento sobre o mundo de microserviços e containers. Nós queremos construir uma API Hello World, efetuar o deploy em um container mínimo e expo-lo com um proxy reverso a frente (nginx) com suporte a TLS 1.2 utilizando certificado do letsencrypt. São 4 desafios principais:
@@ -24,7 +24,7 @@ Todo projeto foi baseado em estudo e pesquisa na internet, junto com meu conheci
 
 A API desenvolvida mostra uma pagina HTML com um texto e uma imagem .gif, sendo que se acessar qualquer outro subdominio no site é mostrado uma pagina de erro e um indicativo para voltar a home, também foi criar um script do Gunicorn para realizar o balanceamento de carga.
 
-#### **Criação do Dockerfile**  :fa-pencil-square-o:
+#### **Criação do Dockerfile**  :memo:
 
 Os Dockerfile's foram criados contendo apenas o conteudo essencial para funcionamento da API e sua segurança tendo abaixo sua especificações
 
@@ -62,7 +62,7 @@ _Obs: O Letsencrypt é validado apenas por 90 dias, sendo necessário renovar co
 sudo make renew-le-cert
 ```
 
-## ✅ Tudo Okay, Let's Go
+## :fast_forward: Tudo Okay, Let's Go
 
 **Iniciar aplicação**
 ```sh
