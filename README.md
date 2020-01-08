@@ -16,7 +16,7 @@ Esse desafio tem como objetivo entender o seu conhecimento sobre o mundo de micr
 
 Fala Time, irei descrever aqui as etapas deste **desafio**, ***MUITO*** desafiador (kkk)
 
-Segui a ordem que esta descrita acima na introdução sendo que a ultima parte não consegui infelizmente não consegui realizar =/
+Segui a ordem que esta descrita acima na introdução sendo que a ultima parte infelizmente não realizei =/
 
 Todo projeto foi baseado em estudo e pesquisa na internet, junto do meu conhecimento.
 
