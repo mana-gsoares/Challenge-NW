@@ -24,7 +24,7 @@ Todo projeto foi baseado em estudo e pesquisa na internet, junto do meu conhecim
 
 A API desenvolvida mostra uma pagina HTML com um texto e uma imagem .gif, sendo que se acessar qualquer outro subdominio no site é mostrado uma pagina de erro e um indicativo para voltar a home, também foi criar um script do Gunicorn para realizar o balanceamento de carga.
 
-#### **Criação do Dockerfile**  :memo:
+#### Criação do Dockerfile  :memo:
 
 Os Dockerfile's foram criados contendo apenas o conteudo essencial para funcionamento da API e sua segurança tendo abaixo sua especificações
 
@@ -33,14 +33,14 @@ Os Dockerfile's foram criados contendo apenas o conteudo essencial para funciona
 | Flask e Gunicorn  | alpine  |  3.7 |
 |  Nginx  |  nginx | mais recente |
 
-####**Configuração do TLS**
+#### Configuração do TLS
 
 Confesso essa foi a parte mais complexa para mim, por mais que existam diversos tutoriais na internet, realizar a integração dentro do Docker me custou muito para compreender, até que consegui um script que automatiza :fa-heart: todo o processo, fiz um code review validando toda a estrutura e ficou uma belezinha. =P
 
-##### :fa-power-off: Como usar 
+######  Como usar 
 
 
-###### 2) Define applications details
+###### 1) Definição dos detalhes da aplicação
 
 O `.env` precisa ser editado para inserir as informações do certificado
 ```sh
@@ -50,7 +50,7 @@ NGX_DOMAIN=meusite.com  # Endereço para o Nginx setar junto com o Letsencrypt
 FLASK_ENV=development          # Setar qual ambiente será usado produção ou dev
 ```
 
-#### 3) SSL
+#### 2) SSL
 Comandos para realizar a validação do Letsencrypt client gerando o certificado SSL
 ```sh
 sudo make install-le-client
@@ -62,7 +62,7 @@ _Obs: O Letsencrypt é validado apenas por 90 dias, sendo necessário renovar co
 sudo make renew-le-cert
 ```
 
-## :fast_forward: Tudo Okay, Let's Go
+## :fast_forward:  Tudo Okay, Let's Go
 
 **Iniciar aplicação**
 ```sh
