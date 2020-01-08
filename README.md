@@ -37,10 +37,10 @@ Os Dockerfile's foram criados contendo apenas o conteudo essencial para funciona
 
 Confesso essa foi a parte mais complexa para mim, por mais que existam diversos tutoriais na internet, realizar a integração dentro do Docker me custou muito para compreender, até que consegui um script que automatiza :fa-heart: todo o processo, fiz um code review validando toda a estrutura e ficou uma belezinha. =P
 
-######  Como usar 
+####  Como usar 
 
 
-###### 1) Definição dos detalhes da aplicação
+#### - Definição dos detalhes da aplicação
 
 O `.env` precisa ser editado para inserir as informações do certificado
 ```sh
@@ -50,7 +50,7 @@ NGX_DOMAIN=meusite.com  # Endereço para o Nginx setar junto com o Letsencrypt
 FLASK_ENV=development          # Setar qual ambiente será usado produção ou dev
 ```
 
-#### 2) SSL
+#### - SSL
 Comandos para realizar a validação do Letsencrypt client gerando o certificado SSL
 ```sh
 sudo make install-le-client
