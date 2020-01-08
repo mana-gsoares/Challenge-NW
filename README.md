@@ -68,4 +68,4 @@ sudo make renew-le-cert
 ```sh
 sudo make dc-start
 ```
-A ultima etapa de automatizar (Ansible + Github Webhooks) não consegui realizar.  :fa-frown-o: :fa-frown-o:
+A ultima etapa de automatizar (Ansible + Github Webhooks) não consegui realizar. :persevere::disappointed:
